@@ -136,19 +136,19 @@ def DCGAN_captions_LSTM_train_both(plt_path, wr_path, pkl_path, model_path, wr_p
     # For prediction, any of the captions may be used.
     # Train discriminator on the middle and the full.
 
-    dset_middle_train_p = np.load(pkl_path + 'dset_middle_train_p.npy')
-    dset_middle_val_p = np.load(pkl_path + 'dset_middle_val_p.npy')
+    # dset_middle_train_p = np.load(pkl_path + 'dset_middle_train_p.npy')
+    # dset_middle_val_p = np.load(pkl_path + 'dset_middle_val_p.npy')
 
     for i in range(0, len(dset_middle_empty_train)):
-        dset_middle_empty_train[i][start:end, start:end, :] = dset_middle_train_p[i] * 2.0 - 1
-        # dset_middle_empty_train[i][start:end, start:end, :] = np.random.rand(32,32,3)*2.0 - 1
+        # dset_middle_empty_train[i][start:end, start:end, :] = dset_middle_train_p[i] * 2.0 - 1
+        dset_middle_empty_train[i][start:end, start:end, :] = np.random.rand(32,32,3)*2.0 - 1
     for i in range(0, len(dset_middle_empty_val)):
-        dset_middle_empty_val[i][start:end, start:end, :] = dset_middle_val_p[i] * 2.0 - 1
-        # dset_middle_empty_val[i][start:end, start:end, :] = np.random.rand(32, 32, 3) * 2.0 - 1
+        # dset_middle_empty_val[i][start:end, start:end, :] = dset_middle_val_p[i] * 2.0 - 1
+        dset_middle_empty_val[i][start:end, start:end, :] = np.random.rand(32, 32, 3) * 2.0 - 1
 
-    print "DELETE SCRAP DATASETS"
-    del (dset_middle_train_p)
-    del (dset_middle_val_p)
+    # print "DELETE SCRAP DATASETS"
+    # del (dset_middle_train_p)
+    # del (dset_middle_val_p)
 
     print "##################"
     print "GET CAPTIONS"
