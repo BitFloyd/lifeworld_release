@@ -2,7 +2,7 @@ from data_package import data_fns
 from exec_functions import execute
 
 # Make this folder if it doesnt exist. Path to save the pkled datasets and captions
-inpainting_root = '/usr/local/data/sejacob/lifeworld/data/inpainting/'
+inpainting_root = '/usr/local/data/sejacob/lifeworld_release/data/inpainting/'
 save_path = inpainting_root + 'pkls/'
 
 # This is where the training images are
